@@ -36,7 +36,7 @@ def cmd_go():
 def file_handle():
 	check_file()
 	add_file_line()
-	print time.sleep(random.randint(12, 20))
+	time.sleep(random.randint(0, 900))	#overtrue 所说的情怀
 	cmd_go()
 
 
