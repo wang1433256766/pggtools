@@ -31,9 +31,8 @@ def cmd_list():
 def cmd_go():
 	cmd_str_list = cmd_list()
 	for cmd_go in cmd_str_list:
-		p = subprocess.Popen(cmd_go,shell=True)
-		p.wait()
-
+		subprocess.call(cmd_go,shell=True)
+		
 def file_handle():
 	check_file()
 	add_file_line()
@@ -42,5 +41,5 @@ def file_handle():
 
 
 if __name__ == "__main__":
-	file_handle()
+	file_handle()	
 	print 'done.'
