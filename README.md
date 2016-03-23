@@ -14,7 +14,15 @@
   git clone git@github.com:HavenShen/gogit.git
   ```
 
-2.设置`crontab`定时任务
+2.在自己的github中创建自己的新库可取名如：`mygogit`取得自己的ssh地址`git@github.com:xxx/mygogit.git`
+
+3.修改刚在github克隆的库目录下`gogit/.git/config`文件中的`remote "origin"`节点下`url`路径
+
+  ```shell
+  url = git@github.com:xxx/mygogit.git
+  ```
+
+4.设置`crontab`定时任务
 
   ```shell
   #编辑定时任务
@@ -27,12 +35,12 @@
   
 ## 配置推送github同时提交coding库
 
-1.在coding创建一个新库gogit得到ssh地址`git@git.coding.net:xxx/gogit.git`
+1.在coding创建一个新库`mygogit`得到ssh地址`git@git.coding.net:xxx/mygogit.git`
 
 2.只需在刚github克隆的库目录下`gogit/.git/config`文件中的`remote "origin"`节点下增加一条
 
   ```shell
-  url = git@git.coding.net:xxx/gogit.git
+  url = git@git.coding.net:xxx/mygogit.git
   ```
 
 搞定。
