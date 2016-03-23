@@ -24,7 +24,7 @@ def add_file_line():
 def cmd_list():
 	cmd_list = []
 	cmd_list.append("git add .")
-	cmd_list.append("git commit -m 'first commit" + str(time.time()) + "'")
+	cmd_list.append("git commit -m 'upload bug info - " + str(time.time()) + "'")
 	cmd_list.append("git push -u origin master")
 	return cmd_list
 	
