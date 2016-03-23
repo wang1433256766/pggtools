@@ -7,7 +7,7 @@
 import sys,os,time,subprocess,random
 
 file_name = 'bug.md'
-file_path = '/Users/HavenShen/Desktop/gogit/'
+file_path = '/home/gitfile/gogit/'
 
 def check_file():
 	if not os.path.exists(file_path + file_name):
@@ -36,7 +36,7 @@ def cmd_go():
 def file_handle():
 	check_file()
 	add_file_line()
-	time.sleep(random.randint(0, 900))	#overtrue 所说的情怀 不需要可注释
+	#time.sleep(random.randint(0, 900))	#overtrue 所说的情怀 不需要可注释
 	cmd_go()
 
 
