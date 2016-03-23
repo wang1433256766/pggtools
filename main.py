@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf8 -*-
 # bk_mysql @ Python
 # Functions: go git
@@ -31,7 +31,8 @@ def cmd_list():
 def cmd_go():
 	cmd_str_list = cmd_list()
 	for cmd_go in cmd_str_list:
-		subprocess.call(cmd_go,shell=True)
+		p = subprocess.Popen(cmd_go,shell=True)
+		p.wait()
 
 def file_handle():
 	check_file()
