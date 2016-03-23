@@ -2,6 +2,8 @@
 
 > 一个用于定时推送github或coding库小玩意。
 
+注：运行此玩意的电脑，必须已经配置好github和coding使用ssh key 无密钥通道git的ssh获取方式。
+
 ## 安装
 
 1.克隆此库
