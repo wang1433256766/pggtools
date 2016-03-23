@@ -36,6 +36,7 @@ def cmd_go():
 def file_handle():
 	check_file()
 	add_file_line()
+	#time.sleep()
 	cmd_go()
 
 
