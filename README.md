@@ -52,9 +52,11 @@
 1.如果crontab不执行python脚本
 
 在`main.py`文件头部加入
-
-#!/usr/bin/python #对应python环境变量路径
-
+  
+  ```shell
+  #!/usr/bin/python #对应python环境变量路径
+  ```
+  
 把Python（`main.py`）的属性改为可执行
 
   ```shell
