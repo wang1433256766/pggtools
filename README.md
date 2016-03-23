@@ -30,7 +30,7 @@
   #键入每天下午3点执行命令
   00 15 * * * /usr/bin/python /home/gitfile/gogit/main.py #这边执行路径按自己的库目录而改动
   #保存退出
-  `:wq`
+  :wq
   ```
   
 ## 配置推送github同时提交coding库
@@ -52,6 +52,7 @@
 1.如果crontab不执行python脚本
 
 在`main.py`文件头部加入
+
 #!/usr/bin/python #对应python环境变量路径
 
 把Python（`main.py`）的属性改为可执行
