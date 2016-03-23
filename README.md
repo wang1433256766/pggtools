@@ -28,7 +28,7 @@
   #编辑定时任务
   crontab -e
   #键入每天下午3点执行命令
-  00 15 * * * /usr/bin/python /home/gitfile/gogit/main.py #这边执行路径按自己的库目录而改动
+  00 15 * * * python /home/gitfile/gogit/main.py #这边执行路径按自己的库目录而改动
   #保存退出
   :wq
   ```
