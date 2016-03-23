@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 # bk_mysql @ Python
-# Functions: 
+# Functions: go git
 # Created By HavenShen on 2016-03-23,Version 0.1
 
 import sys,os,time,subprocess,random
@@ -36,7 +36,7 @@ def cmd_go():
 def file_handle():
 	check_file()
 	add_file_line()
-	time.sleep(random.randint(0, 900))	#overtrue 所说的情怀
+	#time.sleep(random.randint(0, 900))	#overtrue 所说的情怀 不需要可注释
 	cmd_go()
 
 
