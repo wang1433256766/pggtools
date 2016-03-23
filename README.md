@@ -1,8 +1,10 @@
 # gogit
 
-> 一个用于定时推送github或coding库小玩意。
+> 一个结合crontab定时推送github或coding库小玩意。
 
 注：运行此玩意的电脑，必须已经配置好github和coding使用ssh key 无密钥通道git的ssh获取方式。
+
+配置参考：[Git配置安装使用教程操作github上传克隆数据](http://www.cnblogs.com/havenshen/p/3493522.html)
 
 ## 安装
 
