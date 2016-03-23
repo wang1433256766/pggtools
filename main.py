@@ -23,18 +23,18 @@ def add_file_line():
 def git_add():
 	cmd = ['git', 'add', '.']
 	p = subprocess.Popen(cmd,cwd=file_path)
-	p.wait()
+	print p.wait()
 
 def git_commit():
 	centext = "'upload bug info - " + str(time.time()) + "'"
 	cmd = ['git', 'commit', '-m',centext]
 	p = subprocess.Popen(cmd,cwd=file_path)
-	p.wait()
+	print p.wait()
 
 def git_push():
 	cmd = ['git', 'push', '-u','origin','master']
 	p = subprocess.Popen(cmd,cwd=file_path)
-	p.wait()
+	print p.wait()
 
 def cmd_list():
 	cmd_list = []
