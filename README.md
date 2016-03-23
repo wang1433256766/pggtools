@@ -28,9 +28,9 @@
   #编辑定时任务
   crontab -e
   #键入每天下午3点执行命令
-  00 15 * * * python /home/gitfile/gogit/main.py #这边执行路径按自己的库目录而改动
+  00 15 * * * /usr/bin/python /home/gitfile/gogit/main.py #这边执行路径按自己的库目录而改动
   #保存退出
-  :wq
+  `:wq`
   ```
   
 ## 配置推送github同时提交coding库
@@ -47,6 +47,26 @@
 
 坐等任务每天帮你填补github空地，以及coding每天推送代码的 + 0.01码币
 
+## 错误反馈
+
+1.如果crontab不执行python脚本
+
+在`main.py`文件头部加入
+#!/usr/bin/python #对应python环境变量路径
+
+把Python（`main.py`）的属性改为可执行
+
+  ```shell
+  chmod a+x main.py
+  ```
+
+修改`crontab`
+
+  ```shell
+  crontab -e
+  00 15 * * * /home/gitfile/gogit/main.py
+  ```
+  
 ## License
 
 MIT
