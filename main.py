@@ -7,7 +7,7 @@
 import sys,os,time,subprocess,random
 
 file_name = 'bug.md'
-file_path = '/home/gitfile/gogit/'
+file_path = '/Users/HavenShen/Desktop/gogit/'
 
 def check_file():
 	if not os.path.exists(file_path + file_name):
@@ -20,6 +20,21 @@ def add_file_line():
 	f.write(str(time.time()) + '\n')
 	f.close()
 
+def git_add():
+	cmd = ['git', 'add', '.']
+	p = subprocess.Popen(cmd,cwd=file_path)
+	p.wait()
+
+def git_commit():
+	centext = "'upload bug info - " + str(time.time()) + "'"
+	cmd = ['git', 'commit', '-m',centext]
+	p = subprocess.Popen(cmd,cwd=file_path)
+	p.wait()
+
+def git_push():
+	cmd = ['git', 'push', '-u','origin','master']
+	p = subprocess.Popen(cmd,cwd=file_path)
+	p.wait()
 
 def cmd_list():
 	cmd_list = []
@@ -37,8 +52,10 @@ def file_handle():
 	check_file()
 	add_file_line()
 	#time.sleep(random.randint(0, 900))	#overtrue 所说的情怀 不需要可注释
-	cmd_go()
-
+	#cmd_go()
+	git_add()
+	git_commit()
+	git_push()
 
 if __name__ == "__main__":
 	file_handle()	
