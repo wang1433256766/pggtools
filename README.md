@@ -2,7 +2,7 @@
 
 > 一个结合crontab定时推送github或coding库小玩意。
 
-注：运行此玩意的电脑，必须已经配置好github和coding使用ssh key 无密钥通道git的ssh获取方式。
+注：运行此玩意的电脑，必须可运行python、已经配置好github和coding使用ssh key 无密钥通道git的ssh获取方式(推荐使用常年不关机的linux服务器)。
 
 配置参考：[Git配置安装使用教程操作github上传克隆数据](http://www.cnblogs.com/havenshen/p/3493522.html)
 
