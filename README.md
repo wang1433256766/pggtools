@@ -25,7 +25,7 @@
   :wq
   ```
   
-## 配置推送github同事提交coding库
+## 配置推送github同时提交coding库
 
 1.在coding创建一个新库gogit得到ssh地址`git@git.coding.net:xxx/gogit.git`
 
