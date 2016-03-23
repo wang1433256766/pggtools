@@ -41,4 +41,4 @@ def file_handle():
 
 if __name__ == "__main__":
 	file_handle()
-	print 'ok'
+	print 'done.'
