@@ -4,7 +4,7 @@
 # Functions: 
 # Created By HavenShen on 2016-03-23,Version 0.1
 
-import sys,os,time,subprocess
+import sys,os,time,subprocess,random
 
 file_name = 'bug.md'
 file_path = '/Users/HavenShen/Desktop/gogit/'
@@ -36,7 +36,7 @@ def cmd_go():
 def file_handle():
 	check_file()
 	add_file_line()
-	#time.sleep()
+	print time.sleep(random.randint(12, 20))
 	cmd_go()
 
 
