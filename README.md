@@ -13,27 +13,40 @@
   ```shell
   git clone git@github.com:HavenShen/gogit.git
   ```
+  
 ## 配置推送github同时提交coding库
 
-1.在自己的github和coding中创建自己的新库可取名如：`mygogit`取得自己的ssh地址`git@github.com:xxx/mygogit.git` - `git@git.coding.net:xxx/mygogit.git`
+1.在自己的github和coding中创建自己的新库
+
+  可取名如：`mygogit`取得自己的ssh地址
+  
+  * `git@github.com:xxx/mygogit.git`
+  * `git@git.coding.net:xxx/mygogit.git`
 
 2.修改及增加刚在github克隆的库目录下`gogit/.git/config`文件中的`[remote "origin]"`节点下`url`路径
 
-  ```shell
-  url = git@github.com:xxx/mygogit.git
-  url = git@git.coding.net:xxx/mygogit.git
-  ```
+```shell
+url = git@github.com:xxx/mygogit.git
+url = git@git.coding.net:xxx/mygogit.git
+```
 
 ## 设置`crontab`定时任务
 
-  ```shell
-  #编辑定时任务
-  crontab -e
-  #键入每天下午3点执行命令
-  00 15 * * * python /home/gitfile/gogit/main.py #这边执行路径按自己的库目录而改动
-  #保存退出
-  :wq
-  ```
+```shell
+
+#编辑定时任务
+
+crontab -e
+
+#键入每天下午3点执行命令
+
+00 15 * * * python /home/gitfile/gogit/main.py #这边执行路径按自己的库目录而改动
+
+#保存退出
+
+:wq
+  
+```
 
 搞定。
 
@@ -45,22 +58,22 @@
 
 在`main.py`文件头部加入
   
-  ```shell
-  #!/usr/bin/python #对应python环境变量路径
-  ```
+```shell
+#!/usr/bin/python #对应python环境变量路径
+```
   
 把Python（`main.py`）的属性改为可执行
 
-  ```shell
-  chmod a+x main.py
-  ```
+```shell
+chmod a+x main.py
+```
 
 修改`crontab`
 
-  ```shell
-  crontab -e
-  00 15 * * * /home/gitfile/gogit/main.py
-  ```
+```shell
+crontab -e
+00 15 * * * /home/gitfile/gogit/main.py
+```
   
 ## License
 
