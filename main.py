@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
-# bk_mysql @ Python
+# main @ Python
 # Functions: go git
 # Created By HavenShen on 2016-03-23,Version 0.1
 
