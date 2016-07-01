@@ -51,7 +51,7 @@ def cmd_go():
 def file_handle():
 	check_file()
 	add_file_line()
-	time.sleep(random.randint(0, 360))	#overtrue 所说的情怀 不需要可注释
+	#time.sleep(random.randint(0, 360))	#overtrue 所说的情怀 不需要可注释
 	#cmd_go()
 	git_add()
 	git_commit()
