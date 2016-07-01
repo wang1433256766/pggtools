@@ -1,10 +1,10 @@
 # gogit
 
-> 一个结合crontab定时推送github或coding库小玩意。
+> 一个结合 crontab 定时推送 github 或 coding 库小玩意。
 
-注：运行此玩意的电脑，必须可运行python、已经配置好github和coding使用ssh key 无密钥通道git的ssh获取方式(推荐使用常年不关机的linux服务器)。
+注：运行此玩意的电脑，必须可运行 python、已经配置好 github 和 coding 使用 ssh key 无密钥通道 git 的 ssh 获取方式(推荐使用常年不关机的 linux 服务器)。
 
-配置参考：[Git配置安装使用教程操作github上传克隆数据](http://www.cnblogs.com/havenshen/p/3493522.html)
+配置参考：[Git 配置安装使用教程操作 github 上传克隆数据](http://www.cnblogs.com/havenshen/p/3493522.html)
 
 ## 安装
 
@@ -14,23 +14,23 @@
   git clone git@github.com:HavenShen/gogit.git
   ```
   
-## 配置推送github同时提交coding库
+## 配置推送 github 同时提交 coding 库
 
-1.在自己的github和coding中创建自己的新库
+1.在自己的 github 和 coding 中创建自己的新库
 
-  可取名如：`mygogit`取得自己的ssh地址
+  可取名如：`mygogit` 取得自己的 ssh 地址
   
   * `git@github.com:xxx/mygogit.git`
   * `git@git.coding.net:xxx/mygogit.git`
 
-2.修改及增加刚在github克隆的库目录下`gogit/.git/config`文件中的`[remote "origin]"`节点下`url`路径
+2.修改及增加刚在 github 克隆的库目录下 `gogit/.git/config` 文件中的 `[remote "origin]"` 节点下 `url` 路径
 
 ```shell
 url = git@github.com:xxx/mygogit.git
 url = git@git.coding.net:xxx/mygogit.git
 ```
 
-## 设置`crontab`定时任务
+## 设置 `crontab` 定时任务
 
 ```shell
 
@@ -38,7 +38,7 @@ url = git@git.coding.net:xxx/mygogit.git
 
 crontab -e
 
-#键入每天下午3点执行命令
+#键入每天下午 3 点执行命令
 
 00 15 * * * python /home/gitfile/gogit/main.py #这边执行路径按自己的库目录而改动
 
@@ -50,11 +50,11 @@ crontab -e
 
 搞定。
 
-坐等任务每天帮你填补github空地，以及coding每天推送代码的 + 0.01码币
+坐等任务每天帮你填补 github 空地，以及 coding 每天推送代码的 + 0.01 码币
 
 ## 错误反馈
 
-1.如果crontab不执行python脚本
+1.如果 crontab 不执行 python 脚本
 
 在`main.py`文件头部加入
   
@@ -62,13 +62,13 @@ crontab -e
 #!/usr/bin/python #对应python环境变量路径
 ```
   
-把Python（`main.py`）的属性改为可执行
+把 Python（ `main.py` ）的属性改为可执行
 
 ```shell
 chmod a+x main.py
 ```
 
-修改`crontab`
+修改 `crontab`
 
 ```shell
 crontab -e
