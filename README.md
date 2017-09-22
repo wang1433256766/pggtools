@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # gogit
 
 > 一个结合 crontab 定时推送 github 或 coding 库小玩意。
@@ -78,3 +79,6 @@ crontab -e
 ## License
 
 MIT
+=======
+# pggtool
+>>>>>>> 795287d52ff4ddcc8e2310fd66f4fe0929fa22b7
