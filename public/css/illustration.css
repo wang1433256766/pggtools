@@ -1,0 +1,171 @@
+html,body{
+    height:100%;
+    margin:0;
+    background-color: #f5f8f9;
+}
+.wrap{
+    margin:0 auto;
+    margin-top: 45px;
+    width: 1100px;
+}
+.canvasContainer{
+    margin: 20px auto;
+    width: 100%;
+    height: 670px;
+    overflow: hidden;
+    background-color: #f5f8f9;
+    background-image: url('../images/background-illustration.png');
+    background-repeat: no-repeat;
+    background-size: 1100px 290px;
+    background-position: bottom left;
+}
+.canvasTitle{
+    padding:20px 0;
+    text-align:center;
+    font-size:20px;
+    color:#014884;
+    font-weight:bold;
+}
+.canvasSummary{
+    width: 220px;
+    height: 290px;
+    word-wrap: break-word;
+    padding: 15px;
+    font-size: 16px;
+}
+.canvasInfo{
+    width:220px;
+    /*border-right: 2px solid #e3e3e3;
+    min-width: 100px;*/
+    min-height: 600px;
+    float: left;
+	/*background-image:url('../images/illustration.png');
+	background-repeat:no-repeat;
+    background-position: center;*/
+}
+.container{
+    width: 220px;
+    height: 312px;
+    padding-top: 80px;
+    /*width:55%;
+    margin-top: 80px;*/
+}
+#mainscatter,#mainbar,#mainpie{
+    margin-right: 20px;
+    width: 800px;
+    /* min-width: 200px; */
+    min-height: 560px;
+    background-color: #ffffff !important;
+    border: 1px solid #eeeeee;
+    box-shadow: 6px 3px 15px #eeeeee;
+    border-radius: 20px;
+    float: right;
+    padding: 15px;
+}
+/*#mainbar {
+    width: 80%;
+    min-width: 200px;
+    min-height: 600px; 
+    background-color: #ffffff;
+    float: right;
+}
+#mainpie {
+    width: 80%;
+    min-width: 200px;
+    min-height: 600px; 
+    background-color: #ffffff;
+    float: right;
+}*/
+.footer{
+    width: 100%;
+    min-width: 1100px;
+    height: 40px;
+    background-image: url('../images/1-HOME_05.png');
+    text-align: center;
+    color: #ffffff;
+    line-height: 40px;
+    font-size: 12px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 999;
+}
+.file {
+    position: relative;
+    display: inline-block;
+    background: #11a3de;
+    border: 1px solid #11a3de;
+    border-radius: 4px;
+    padding: 4px 14px;
+    overflow: hidden;
+    color: #ffffff;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    left: 48px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #11a3de;
+    border-color: #11a3de;
+    color: #ffffff;
+    text-decoration: none;
+}
+.showFileName,.showBarFileName,.showPieFileName,.showTreeFileName{
+    text-align: center;
+    color: #014884;
+    font-size: 14px;
+}
+#people{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#treeImgSel{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#classZ{
+    position: absolute;
+    z-index:2;
+    margin-left: 320px;
+    /*text-align: center;
+    margin-top:20px;
+    margin-left: -40px;*/
+}
+.legendsty{
+    border:0px;
+    width: 30px;
+    height: 18px;
+    line-height:1px;
+    font-size:12px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 60px;
+}
+.legendsty p{
+    margin-left:25px;
+    line-height: 16px;
+    padding-left:8px;
+}
+#svgCanvas{
+    margin-right: 20px;
+    width: 800px;
+    /*width: 80%;
+    min-width: 200px;*/
+    min-height: 560px; 
+    background-color: #ffffff !important;
+    border: 1px solid #eeeeee;
+    box-shadow: 6px 3px 15px #eeeeee;
+    border-radius: 20px;
+    float: right;
+    padding: 15px;
+    /*text-align: center;*/
+}

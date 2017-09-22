@@ -1,0 +1,13 @@
+#footer{
+    background-color:#1b74b6;
+    color: #eeeeee;
+}
+#footer .container{
+    padding-top: 15px;
+}
+#footer .footer-row>div h3{
+    border-bottom: 1px solid #eeeeee;
+}
+#footer .footer-row-1 img{
+    width:200px;
+}

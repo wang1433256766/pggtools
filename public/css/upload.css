@@ -1,0 +1,118 @@
+#middle-0{
+    /*padding:50px 0;
+    background-color: #eeeeee;
+    background: -webkit-radial-gradient(circle,#eeeeee,#dddddd);
+    background: -moz-radial-gradient(circle,#eeeeee,#dddddd);
+    background: -o-radial-gradient(circle,#eeeeee,#dddddd);
+    background: radial-gradient(circle,#eeeeee,#dddddd);*/
+}
+
+
+#middle-0 .container {
+    width: 1050px;
+}
+
+#middle-0 .container .row{
+    background-color: white;
+    padding:50px;
+    -webkit-box-shadow: 0 0 10px 0 rgba(27, 97, 159, 0.5);
+    -moz-box-shadow: 0 0 10px 0 rgba(27, 97, 159, 0.5);
+    box-shadow: 0 0 10px 0 rgba(27, 97, 159, 0.5);
+}
+
+.btn{
+	width:100px;
+    font-size: 12px;
+    padding:10px 20px;
+    border:none;
+    background-color: #11a3de;
+    color: #ffffff;
+    -webkit-transition: background-color 300ms;
+    -moz-transition: background-color 300ms;
+    -ms-transition: background-color 300ms;
+    -o-transition: background-color 300ms;
+    transition: background-color 300ms;
+}
+.btn:hover{
+    padding:10px 20px;
+    border:none;
+    cursor: pointer;
+    background-color: #11a3de;
+    color: #ffffff;
+}
+
+.sub-container-file{
+}
+.sub-container-file .text-right{
+}
+.file-upload-control-button{
+    display: inline-block;
+}
+.file-upload-control-button#picker{
+    position: relative;
+    height:37px;
+    overflow: hidden;
+	background-color:#11a3de;
+	padding:4px 12px;
+	border-radius:3px;
+}
+.webuploader-pick{
+	padding:5px 15px;
+	background-color:#11a3de;
+}
+.sub-container-file-selected{
+    min-height: 50px;
+}
+.uploader-list h4{
+    font-size: 14px;
+    background-color: #eeeeee;
+    padding:10px;
+    margin:0;
+    -webkit-transition: background-color 300ms;
+    -moz-transition: background-color 300ms;
+    -ms-transition: background-color 300ms;
+    -o-transition: background-color 300ms;
+    transition: background-color 300ms;
+}
+.uploader-list h4 .glyphicon{
+    cursor: pointer;
+}
+.uploader-list p{
+    margin:0;
+    padding:5px 10px;
+}
+.uploader-list h4:hover{
+    background-color: #1b84cd;
+    color: #eeeeee;
+}
+.uploader-list .glyphicon{
+    float: right;
+    margin-left: 10px;
+}
+#thelist{
+    padding:0 30px;
+}
+
+.ui-widget-header{
+    background: #11a3de url(images/ui-bg_gloss-wave_55_5c9ccc_500x100.png) 50% 50% repeat-x;
+    height: 35px;
+    line-height: 25px;
+}
+
+.footer{
+    width: 100%;
+    min-width: 1100px;
+    height: 40px;
+    background-image: url('../images/1-HOME_05.png');
+    text-align: center;
+    color: #ffffff;
+    line-height: 40px;
+    font-size: 12px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 999;
+}
+.label-warning{
+    background-color: #f07b05;
+}

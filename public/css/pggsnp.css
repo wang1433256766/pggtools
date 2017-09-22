@@ -1,0 +1,290 @@
+/* group structure style
+* -----------------------------*/
+body *{
+    margin-left:0px;
+    padding-left:0px;
+}
+
+.wrap, #header, #footer{
+    width:1200px;
+    margin:0 auto;
+    padding-left:25px;
+    padding-right:25px;
+    /*border-left:2px black solid;*/
+}
+
+.wrap{
+    padding-top:20px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    background-color: white;
+    border:gainsboro 1px solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height:750px;
+}
+
+ #header{
+     height:120px;
+ }
+
+ #header .input-group{
+    width:200px;
+    float:right;
+}
+
+#header .form-control, #header .btn-default{
+      height:22px;
+      padding-bottom:2px;
+      padding-top:2px;
+      border:none;
+}
+
+.navbar-brand{
+    height:75px;
+    padding-top:5px;
+    margin-top:0px;
+}
+
+.jump{
+    width:100%;
+    /*border: 2px red solid;*/
+}
+
+#news{
+    padding-left:20px;
+    padding-right:5px;
+    margin:0px;
+    border-left: 1px gainsboro solid;
+    height:275px;
+}
+
+[class^="col-md"]{
+    padding-left:0px;
+    border-left:0px;
+    margin-left:0px;
+    padding-right:0px;
+    border-right:0px;
+    margin-right:0px;
+}
+
+
+/* @group general style
+ * ----------------------------*/
+body{
+    background-color: #f5f8f9;
+}
+
+body *{
+    font-family:Helvetica Arial, sans-serif;
+}
+
+a,p{
+    font-family:Tahoma;
+    font-size:15px;
+    line-height: 23px;
+}
+
+a:hover{
+    text-decoration: unset;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight:bold;
+    font-family:Helvetica Arial, sans-serif;
+}
+
+#header{
+    background-color:#002e5f;
+}
+
+#header .lisence{
+    color:white;
+    font-size:12px;
+}
+
+.lisence a{
+    color:white;
+    font-size:12px;
+    text-decoration: underline;
+}
+
+.lisence a:hover, .lisence a:visited{
+    color:white;
+}
+
+ #header .btn-default{
+     background-color:#f07b05; 
+}
+
+#header .glyphicon-search{
+    color:white;
+}
+
+#news h4{
+    font-style:italic;
+}
+
+
+/* @group page components
+* ------------------------------ */
+.pggsnp-name {
+    /*color:#f07b05;*/
+    color:green;
+}
+
+.pggsnp-logo {
+    width:100px;
+    height:100px;
+    margin-left: 50px;
+}
+
+
+#table-section {
+    width:85%;
+}
+.snp-leader-table {
+    width:100%
+}
+
+#table-section td, .snp-leader-table td{
+    width: 3%;
+    text-align:left;
+}
+
+
+
+.snpinput{
+    width:650px;
+    height:32px;
+    border-top-left-radius:3px;
+    border-bottom-left-radius:3px;
+    border-top-width:1px;
+    border-left-width:1px;
+    padding-top:0px;
+    padding-left:10px;
+    /*box-shadow: inset 0px 0px 0px #ccc;*/
+}
+.snpbuttom{
+    height:32px;
+    width:60px;
+    border-top-right-radius:3px;
+    border-bottom-right-radius:3px;
+    background-color:orange;
+    border-width:1px;
+    border-color:orange;
+    margin-left:-4px;
+    font-size:16px;
+}
+
+
+
+
+/*---------------------*/
+
+
+.rs-null {
+    margin:60px;
+    font-size:19px;
+    font-weight: bold;
+    color:orange;
+}
+
+.input-group-lab {
+    width: 30%;
+}
+
+.input-group-width {
+    width: 100%;
+}
+
+#userlink {
+    font-weight: bold;
+}
+
+
+/*group footer style
+ * ----------------------*/
+#footer1{
+    width:75%;
+    height:30px;
+    margin:0 auto;
+    padding-left:100px;
+}
+
+
+
+
+
+
+/* The header style
+ * ----------------------------*/
+#header1{
+    width:100%;
+    background-color:#002e5f;
+    height:105px;
+    /*margin:0 auto;*/
+    top:0px;
+    /*position:absolute;*/
+    padding-top:3px;
+
+}
+
+
+.headsearch-button{
+    margin:0px;
+    border:0px;
+    padding-top:1px;
+    padding-bottom:5px;
+    padding-left:5px;
+    margin-right:-5px;
+    border-top-left-radius:8px;
+    border-bottom-left-radius:8px;
+    background-color:white;
+}
+.headsearch, .headsearch-button {
+    height:20px;
+    
+}
+
+.copyrightNotice{
+    color:grey;
+    }
+
+.login span,
+.login a {
+    color:white;
+}
+
+header p {
+    font-size: 14px;
+    font-family:Helvetica;
+}
+.login a:hover {
+    color:#5cb85c;
+    text-decoration:none;
+}
+
+header .nav a{
+    color:white;
+    font-size:16px;
+    font-family:Helvetica;
+}
+
+header .nav a:hover {
+    color:#5cb85c;
+}
+
+header .nav ul li a {
+    color: #5cb85c;
+}
+
+ul.nav>li{
+    float: left;
+}
+
+
+
+/*group structure style
+ * -----------------------*/
+

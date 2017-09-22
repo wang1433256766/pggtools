@@ -1,0 +1,24 @@
+.container{
+    width: 1200px;
+}
+#header{
+    background-color:#1b74b6;
+}
+#header .container-1 a{
+    text-decoration: none;
+    display: inline-block;
+    padding:10px 20px;
+    color: #eeeeee;
+    -webkit-transition: background-color 200ms;
+    -moz-transition: background-color 200ms;
+    -ms-transition: background-color 200ms;
+    -o-transition: background-color 200ms;
+    transition: background-color 200ms;
+}
+#header .container-1 a:hover,
+#header .container-1 a.active{
+    background-color: #005a9d;
+}
+#header .container-1 #logo img{
+    height:20px;
+}

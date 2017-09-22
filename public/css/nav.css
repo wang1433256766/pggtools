@@ -1,0 +1,59 @@
+.nav{
+    /* background:	#F9F9F9; */
+	width:100%;
+    min-width: 1100px;
+    height: 42px;
+	position:fixed;
+	top:0px;
+	z-index:5;
+	background-image:url('../images/1-HOME_05.png');
+}
+
+body>.nav {
+    padding-left:80px;
+    padding-right:80px;
+}
+
+.navbar-brand{
+	padding:0;
+	margin-top:4px;
+}
+
+body>.nav a{
+    color:#ffffff;
+    font-size:16px;
+    font-family:Helvetica;
+}
+
+body>.nav a:hover{
+    color:#ffffff;
+    font-size:16px;
+    font-family:Helvetica;
+    height: 40px;
+	background:none;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+body>.nav .active a{
+    color:#f07b06;
+    font-size:16px;
+    font-family:Helvetica; 
+    height:40px;
+	background:none;
+	cursor:pointer;
+}
+
+body>.nav .active a:hover{
+    color:#f07b06;
+    font-size:16px;
+    font-family:Helvetica;
+    height:40px;
+	background:none;
+	text-decoration:none;
+}
+
+.login{
+    padding-top:10px;
+	color: #ffffff;
+}

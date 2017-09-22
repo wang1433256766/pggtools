@@ -1,0 +1,118 @@
+$.get('/getConversion').done(function (data) {
+    console.log(data);
+})
+
+var mainObj = document.getElementById('main');
+    var circlex = mainObj.offsetWidth/2;
+    var circley = mainObj.offsetHeight/2;
+    var myChart = echarts.init(document.getElementById('main'));
+        //myChart.showLoading();
+        //myChart.hideLoading();
+        var categories = [];
+        for (var i = 0; i < 9; i++) {
+            categories[i] = {
+                name: '格式' + i
+            };
+        }
+        //console.log(categories);
+        var data = [{name:"格式一",symbolSize:60,category:0},
+                    {name:"格式二",symbolSize:60,category:1},
+                    {name:"格式三",symbolSize:60,category:2},
+                    {name:"格式四",symbolSize:60,category:3},
+                    {name:"格式五",symbolSize:60,category:4},
+                    {name:"格式六",symbolSize:60,category:5},
+                    {name:"格式七",symbolSize:60,category:6},
+                    {name:"格式八",symbolSize:60,category:7},
+                    {name:"格式九",symbolSize:60,category:8},
+                    {name:"格式十",symbolSize:60,category:9}];
+        var links = [{source:0,target:3,name:'->'},{source:0,target:4,name:'->'},{source:1,target:5,name:'->'},{source:0,target:7,name:'->'},{source:0,target:9,name:'->'},{source:1,target:2,name:'->'},{source:1,target:3,name:'->'},{source:1,target:4,name:'->'},{source:1,target:8,name:'->'},{source:2,target:0,name:'->'},{source:2,target:1,name:'->'},{source:2,target:6,name:'->'},{source:3,target:0,name:'->'},{source:3,target:1,name:'->'},{source:3,target:5,name:'->'},{source:4,target:1,name:'->'},{source:4,target:3,name:'->'},{source:4,target:7,name:'->'},{source:5,target:0,name:'->'},{source:6,target:3,name:'->'},{source:7,target:5,name:'->'},{source:8,target:4,name:'->'},{source:9,target:2,name:'->'}];
+
+        data.forEach(function (node) {
+            //console.log(node);
+            //node.itemStyle = null;
+            //node.value = node.symbolSize;
+            node.label = {
+                normal: {
+                    show: true  //显示对应格式标签
+                }
+            };
+        });
+        option = {
+            title: {
+                text: 'Les Miserables',
+                subtext: 'Circular layout',
+                top: 'top',
+                left: 'left'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: function (params) {
+                    //console.log(params);
+                    if (params.dataType == "edge") {    // is edge
+                        return '格式'+parseInt(params.data.source+1) + ' ' + params.data.name + ' 格式' + parseInt(params.data.target+1);
+                    } else {    // is node
+                        return params.data.name;
+                    }
+                }
+            },
+            legend: [{
+                // selectedMode: 'single',
+                left: 'right',
+                orient: 'vertical',
+                data: categories.map(function (a) {
+                    return a.name;
+                })
+            }],
+            animationDurationUpdate: 1500,
+            animationEasingUpdate: 'quinticInOut',
+            series : [
+                {
+                    name: 'Les Miserables', //用于tooltip显示，legend图例筛选，在setOption更新数据和配置项时用于指定对应的系列
+                    type: 'graph',
+                    layout: 'circular', //采用环形布局
+                    circular: {
+                        rotateLabel: true //旋转标签，默认false不旋转
+                    },
+                    data: data,
+                    links: links,
+                    categories: categories,//与lengend对应name
+                    roam: true,//是否开启鼠标缩放和平移漫游
+                    //draggable: true,//节点是否可拖拽，只在使用力引导布局时有用
+                    label: {  //图形上的文本标签，可用于说明图形的一些数据信息，如值，名称等
+                        normal: {
+                            position: 'left', //标签的位置
+                            formatter: '{b}'
+                        }
+                    },
+                    lineStyle: {
+                        normal: {
+                            color: 'source',//与源的颜色相同
+                            width: 4,
+                            opacity: 0.8, //图形透明度
+                            curveness: 0.3 //边的曲度（0到1的范围，值越大，曲度越大）
+                        }
+                    }
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+
+        myChart.on("mouseover", function (params){  
+            //console.log(params); 
+            var links_sub = [];
+            if(params.dataType == 'node'){
+                $.each(links, function(i,v){
+                    if(parseInt(v.source) == parseInt(params.data.category)){
+                        links_sub.push(v);
+                    }
+                })
+                option.series[0].links = links_sub;
+                myChart.setOption(option);
+            } 
+             
+        });
+        myChart.on("mouseout", function (params){
+            option.series[0].links = links;
+            myChart.setOption(option); 
+        });

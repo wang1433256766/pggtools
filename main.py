@@ -7,7 +7,7 @@
 import sys,os,time,subprocess,random
 
 file_name = 'bug.md'
-file_path = '/root/autobak/gogit'
+file_path = '/usr/share/tomcat/webapps/pggdb/WEB-INF'
 
 def check_file():
 	if not os.path.exists(file_path + file_name):

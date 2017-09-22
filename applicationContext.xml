@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task    
+		http://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+    <bean id="propertyConfigure"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>/WEB-INF/dbconfig.properties</value>
+                <value>/WEB-INF/property.properties</value>
+            </list>
+        </property>
+    </bean>
+    
+	<!-- 扫描包 -->
+	<context:component-scan base-package="pggsnp, pggtools, test">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+    <!-- druid数据源 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+		<property name="driverClassName" value="${db.driverClassName}" />
+		<property name="filters" value="${db.filters}" />
+		<!-- 最大并发连接数 -->
+		<property name="maxActive" value="${db.maxActive}" />
+		<!-- 初始化连接数量 -->
+		<property name="initialSize" value="${db.initialSize}" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="${db.maxWait}" />
+		<!-- 最小空闲连接数 -->
+		<property name="minIdle" value="${db.minIdle}" />
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="${db.timeBetweenEvictionRunsMillis}" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="${db.minEvictableIdleTimeMillis}" />
+		<property name="validationQuery" value="${db.validationQuery}" />
+		<property name="testWhileIdle" value="${db.testWhileIdle}" />
+		<property name="testOnBorrow" value="${db.testOnBorrow}" />
+		<property name="testOnReturn" value="${db.testOnReturn}" />
+		<property name="maxOpenPreparedStatements" value="${db.maxOpenPreparedStatements}" />
+		<!-- 打开 removeAbandoned 功能 -->
+		<property name="removeAbandoned" value="${db.removeAbandoned}" />
+		<!-- 1800 秒，也就是 30 分钟 -->
+		<property name="removeAbandonedTimeout" value="${db.removeAbandonedTimeout}" />
+		<!-- 关闭 abanded 连接时输出错误日志 -->
+		<property name="logAbandoned" value="${db.logAbandoned}" />
+	</bean>
+
+
+	<!-- jebctemplate -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+    <!-- task相关 -->
+	<task:annotation-driven executor="myexecutor" />
+	<task:executor id="myexecutor" pool-size="5" />
+
+	<!-- shiro -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+	<!-- 加密方式 -->
+	<bean id="credentialsMatcher"
+		class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+		<property name="hashAlgorithmName" value="md5" />
+		<property name="hashIterations" value="5" />
+		<property name="storedCredentialsHexEncoded" value="true" />
+	</bean>
+
+	<bean id="myRealm" class="pggsnp.util.MyRealm">
+		<property name="credentialsMatcher" ref="credentialsMatcher" />
+	</bean>
+
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realms">
+			<list>
+				<ref bean="myRealm" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- /**=authc -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/login" />
+		<property name="successUrl" value="/pggtool" />
+		<property name="unauthorizedUrl" value="/pggtool" />
+		<property name="filterChainDefinitions">
+			<value>
+				/dologin=anon
+				/login=anon
+				/logout=anon
+				/register=anon
+				/doregiste=anon
+				/active/**=anon
+				/preChangePwd=anon
+				/changePwd=anon
+				/public/**=anon
+				/pggtools=anon
+				/imputation=anon
+				/gwas=anon
+				/isLogin=anon
+				/getAllNewsTable=anon
+				/getNews=anon
+				/getAllNews=anon
+				/downloadScript=anon
+				/getConversion=anon
+				/metrics=anon
+				/getimputRefPanel=anon
+				/forgetPwd=anon
+				/conversion=anon
+				/illustration=anon
+				/=anon
+				/reactive=anon
+				/favicon.ico = anon
+				<!-- /changeUserRole=roles[admin]
+				/changeUserStatus=roles[admin]
+				/getAllUsers=roles[admin] -->
+				/=anon
+
+				/**=authc
+			</value>
+		</property>
+	</bean>
+
+    <!-- aop -->
+	<aop:aspectj-autoproxy />
+
+</beans>

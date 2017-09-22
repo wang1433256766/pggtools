@@ -1,0 +1,229 @@
+/* @group general style
+ * ----------------------------*/
+body{
+    /*background-color: #f5f8f9;*/
+    background-color:#F5F8F9;
+}
+
+body p{
+    font-family:Helvetica, sans-serif, Arial;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight:bold;
+    font-family:Helvetica, Arial, sans-serif;
+}
+/* group structure style
+* -----------------------------*/
+
+.secend-nav{
+    position:fixed;
+    z-index:6;
+    top:42px;
+    width: 100%;
+    min-width: 1100px;
+    height: 40px;
+    background-color: #f2f2f2;
+    color: #000000;
+}
+.secend-nav ul{
+    list-style:none; /* 将默认的列表符号去掉 */
+    padding:0; /* 将默认的内边距去掉 */
+    margin:0; /* 将默认的外边距去掉 */
+    margin-left: 100px;
+}
+.secend-nav ul li{
+    float:left; /* 往左浮动 */
+}
+.secend-nav li a{
+    display:block; /* 将链接设为块级元素 */
+    height: 40px;
+    line-height: 40px;
+    padding:0px 80px; /* 设置内边距 */
+    background:#f2f2f2; /* 设置背景色 */
+    color:#333; /* 设置文字颜色 */
+    text-decoration:none; /* 去掉下划线 */
+    font-size: 16px;
+}
+.secend-nav li a:hover{
+    background:#f2f2f2; /* 设置背景色 */
+}
+.secend-nav .active a{
+    color:#333;
+    font-weight: bold;
+}
+.imputation-server{
+    line-height: 40px;
+    font-size: 14px;
+    padding-right:50px;
+    color:#000000;
+}
+
+.wrap{
+    width:1100px;
+    margin:0 auto;
+    padding: 20px 20px;
+    margin-top:82px;
+    background-color:#F5F8F9;
+    padding-bottom: 0;
+}
+
+.jumbotron-part{
+    width: 1060px;
+    overflow: hidden;
+}
+.jumbotron-part .jumbotron-describtion{
+    width: 800px;
+    float: left;
+}
+.jumbotron-part .jumbotron-image{
+    width: 260px;
+    float: left;
+}
+
+.about-title{
+    width: 1060px;
+    overflow: hidden;
+}
+.about-title .col-md-4 {
+    width: 353.333333px;
+    float: left;
+}
+.about-title .about-instr{
+    background: #037aad;
+    color: #ffffff;
+    font-size: 18px;
+    width: 156px;
+    height: 52px;
+    border-radius: 10px;
+    line-height: 52px;
+    margin: 0 auto;
+    margin-bottom: -16px;
+    display: inline-block;
+}
+.about-title .about-content{
+    margin: 0 auto;
+    margin-top: -10px;
+    padding: 50px;
+    width: 260px;
+    height: 214px;
+    background: #11a3dd;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.bottom-part{
+    border: 2px solid #eeeeee;
+    border-bottom: none;
+    margin-top: 50px;
+    padding: 0 20px;
+    padding-bottom: 40px;
+    padding-right: 180px;
+    box-shadow: 6px -3px 15px #eeeeee;
+}
+
+.section h3{
+    color: #014884;
+    font-size: 18px;
+}
+.section p{
+    color:#333;
+    font-size: 14px;
+    margin-top: 14px;
+}
+.section h5{
+    color:#27abc0;
+    font-size: 16px;
+}
+p a{
+    color: #f07b05;
+}
+p a:hover{
+    color: #f07b05;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+pre{
+    width:100%;
+    height: 36px;
+    color: #666;
+    background-color: #e4e0e0;
+    font-size: 12px;
+    margin-top: 8px;
+}
+#td-narrow{
+    width:60%;
+}
+.table{
+    margin-bottom: 0px;
+}
+.btn-primary,.btn-primary:hover{
+    background-color: #71acd9;
+    border: 0px;
+}
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th{
+    border-bottom-width: 0px;
+}
+.fontStyle{
+    /*text-indent:2em;*/
+    line-height: 1.8em;
+}
+ol, ul {
+    padding-left: 15px;
+    line-height: 1.8em;
+}
+
+.label{
+    padding: .3em .6em;
+    color: #333;
+}
+.label-info{
+    background-color: #f07b05;
+}
+.label-color{
+    background-color:#f09335;
+}
+
+.footer{
+    width: 100%;
+    min-width: 1100px;
+    height: 40px;
+    background-image: url('../images/1-HOME_05.png');
+    text-align: center;
+    color: #ffffff;
+    line-height: 40px;
+    font-size: 12px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 999;
+}
+
+.mao-part{
+    display: none;
+    position: fixed;
+    top: 120px;
+    /*right: 60px;*/
+    margin-left: 950px;
+}
+.mao-part ul a,.mao-part ul a:hover{
+    text-decoration: none;
+}
+.mao-part ul li{
+    width: 180px;
+    height: 36px;
+    padding-left: 20px;
+    margin-top:5px;
+    list-style-type: none;
+    background: #ebebeb;
+    line-height: 36px;
+    font-size: 16px;
+    font-family: Helvetica, sans-serif, Arial;
+    color: #333;
+}
+.mao-part ul li:hover, #mao-style{
+    font-weight: bold;
+    background: #dcdcdc;
+}

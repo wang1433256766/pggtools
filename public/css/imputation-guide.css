@@ -1,0 +1,236 @@
+/* @group general style
+ * ----------------------------*/
+body{
+    /*background-color: #f5f8f9;*/
+    background-color:#F5F8F9;
+}
+
+body p{
+    font-family:Helvetica, sans-serif, Arial;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight:bold;
+    font-family:Helvetica, Arial, sans-serif;
+}
+/* group structure style
+* -----------------------------*/
+
+.secend-nav{
+	position:fixed;
+	z-index:3;
+	top:42px;
+    width: 100%;
+    min-width: 1100px;
+    height: 40px;
+    background-color: #f2f2f2;
+    color: #000000;
+}
+.secend-nav ul{
+    list-style:none; /* 将默认的列表符号去掉 */
+    padding:0; /* 将默认的内边距去掉 */
+    margin:0; /* 将默认的外边距去掉 */
+    margin-left: 100px;
+}
+.secend-nav ul li{
+    float:left; /* 往左浮动 */
+}
+.secend-nav li a{
+    display:block; /* 将链接设为块级元素 */
+    height: 40px;
+    line-height: 40px;
+    padding:0px 80px; /* 设置内边距 */
+    background:#f2f2f2; /* 设置背景色 */
+    color:#333; /* 设置文字颜色 */
+    text-decoration:none; /* 去掉下划线 */
+    font-size: 16px;
+}
+.secend-nav li a:hover{
+    background:#f2f2f2; /* 设置背景色 */
+}
+.secend-nav .active a{
+    color:#333;
+    font-weight: bold;
+}
+
+.wrap{
+    width:1100px;
+    margin:0 auto;
+    padding-left:30px;
+    padding-right:20px;
+}
+
+
+.imputation-server{
+    line-height: 40px;
+    font-size: 14px;
+    padding-right:50px;
+    color:#000000;
+}
+
+.left-part{
+    width: 200px;
+    position: fixed;
+	top: 82px;
+	margin-top:20px;
+	margin-left: -14px;
+}
+.left-part ul{
+    list-style:none;
+    padding:0; /* 将默认的内边距去掉 */
+    margin:0; /* 将默认的外边距去掉 */
+}
+.left-part li a{
+    display:block; /* 将链接设为块级元素 */
+    height: 40px;
+    line-height: 40px;
+    background:#f2f2f2; /* 设置背景色 */
+    color:#999; /* 设置文字颜色 */
+    text-decoration:none; /* 去掉下划线 */
+    font-weight: normal;
+    padding-left: 15px;
+}
+.left-part li a:hover{
+	color:#11a3dd;
+}
+
+.left-part .text-right{
+    display:block;
+    padding-right: 15px;
+    margin-top: -40px;
+}
+
+.right-part{
+    width: 1100px;
+    padding-left:220px;
+	margin-top:82px;
+	background-color:#ffffff;
+	margin-left:-20px;
+	padding-right:3px;
+	padding-bottom:40px;
+	padding-top:20px;
+}
+
+.jumbotron{
+	background-color: transparent;
+    background-image: url('../images/2-Imputation-guide1_03.png');
+    margin-left:0px;
+    margin-right:0px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top: 20px;
+    height: 257px;
+    color: #ffffff;
+}
+.jumbotron h3{
+    text-align: center;
+	color:#ffffff;
+}
+.jumbotron p{
+    padding-top: 24px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.about-title{
+    width: 100%;
+    text-align: left;
+	margin-top: -20px;
+	overflow: hidden;
+}
+/*.about-title .col-md-4{
+    padding-left: 0px;
+}*/
+
+.about-title h3{
+    color:#014884;
+    font-size: 18px;
+}
+.about-title .about-content{
+    color:#333;
+    font-size: 14px;
+}
+
+.section{
+    margin-top:30px;
+    padding-top:82px;
+    margin-top:-82px;
+    margin-left: 15px;
+}
+.section h3{
+    color:#014884;
+    font-size: 18px;
+}
+.section p{
+    color:#333;
+    font-size: 14px;
+    margin-top: 14px;
+}
+.section h5{
+    color:#27abc0;
+    font-size: 16px;
+}
+p a{
+    color: #f07b05;
+}
+p a:hover{
+    color: #f07b05;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+pre{
+    width:100%;
+    height: 36px;
+    color: #666;
+    background-color: #e4e0e0;
+    font-size: 12px;
+	margin-top: 8px;
+}
+
+#td-narrow{
+    width:60%;
+}
+.label{
+    padding: .3em .6em;
+    color: #333;
+}
+.label-info{
+    background-color: #f07b05;
+}
+.label-color{
+	background-color:#f09335;
+}
+.table{
+    margin-bottom: 0px;
+}
+
+.footer{
+    width: 100%;
+    min-width: 1100px;
+    height: 40px;
+    background-image: url('../images/1-HOME_05.png');
+    text-align: center;
+    color: #ffffff;
+    line-height: 40px;
+    font-size: 12px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 999;
+}
+.btn-primary,.btn-primary:hover{
+    background-color: #49b9e5;
+    border: 0px;
+}
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th{
+	border-bottom-width: 0px;
+}
+.fontStyle{
+	/*text-indent:2em;*/
+	line-height: 1.8em;
+}
+ol, ul {
+    padding-left: 15px;
+    line-height: 1.8em;
+}
