@@ -8,7 +8,7 @@ var currentForm,formData;
 
 var windowInnerWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 var windowInnerHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
+//test auto push git
 // setCookie('username','yorkzhou',10);
 // if(getCookie('username')===''){
 //     document.getElementById('tag-sign-container').style.display='inline-block';
