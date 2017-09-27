@@ -19,6 +19,7 @@
         <jsp:include  page="nav.jsp"/>
         
         <div class="wrap">
+            <div class="row"><h2>Job Detail</h2></div>
             <div class="row">
                 <div class="col-md-6">  
                     <label class="control-label">Job ID:</label>  
@@ -35,8 +36,8 @@
                     <strong id="jobpipelinemodel" style="color:#11a3de;"></strong>
                 </div>
                 <div class="col-md-6">  
-                    <label class="control-label">Status:</label>  
-                    <strong id="jobstatusmodel" style="color:#11a3de;"></strong>
+                    <label class="control-label">Command:</label>  
+                    <strong id="jobcommandmodel" style="color:#11a3de;"></strong>
                 </div>
             </div>
             <div class="row">
@@ -49,7 +50,7 @@
                     <strong id="jobstatetimemodel" style="color:#11a3de;"></strong>
                 </div> 
             </div> 
-            <div class="row">
+            <div class="row" style="margin-top: 20px;">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -59,7 +60,7 @@
                             <th class="label-default">size</th>
                             <th class="label-default">md5</th>
                             <th class="label-default">datetime</th>
-                            <th class="label-default">status</th>
+                            <!-- <th class="label-default">status</th> -->
                         </tr>
                     </thead>
                     <tbody id="fileModelTable">
@@ -67,6 +68,43 @@
                     </tbody>
                 </table>
             </div>
+            <div class="row"><h2>Job State Tracking</h2></div>
+            <div>
+                <ul class="steps" style="margin-left: 0">
+                    <li data-step="1" class="active">
+                        <span class="step">1</span>
+                        <span class="title">已提交</span>
+                    </li>
+
+                    <li data-step="2">
+                        <span class="step">2</span>
+                        <span class="title">进入队列</span>
+                    </li>
+
+                    <li data-step="3">
+                        <span class="step">3</span>
+                        <span class="title">job分析</span>
+                    </li>
+
+                    <li data-step="4">
+                        <span class="step">3a</span>
+                        <span class="title">job分析第一步</span>
+                    </li>
+                    <li data-step="5">
+                        <span class="step">3b</span>
+                        <span class="title">job分析第二步</span>
+                    </li>
+                    <li data-step="6">
+                        <span class="step">3c</span>
+                        <span class="title">job分析第三步</span>
+                    </li>
+                    <li data-step="7">
+                        <span class="step">4</span>
+                        <span class="title">job运行结束</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="row"><h2>生成的脚本文件</h2></div>
         </div>
 
         <div class="footer">

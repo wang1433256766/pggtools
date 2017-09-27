@@ -44,7 +44,7 @@ $(function(){
                             	"<td><a target='_blank' href='/fileDownload?id="+v.id+"'>"+v.name+"</a></td>"+
                             	"<td>"+v.path+"</td><td>"+v.size+"</td>"+
                             	"<td>"+v.md5+"</td><td>"+v.datetime+"</td>"+
-                            	"<td>"+v.status+"</td>"+
+                            	// "<td>"+v.status+"</td>"+
                             	"</tr>");
                         }
                     })
