@@ -287,7 +287,7 @@ $(function(){
 function formatId(params){
     console.log(fromTool);
     //return "<a href='#' style='color:#11a3de;' onclick='openDetailModal("+params+")'>"+params+"</a>";
-    return "<a href='/job-track?jobid="+params+"&from="+fromTool+"' style='color:#11a3de;'>"+params+"</a>";
+    return "<a href='/job-track?jobid="+params+"&from="+fromTool+"' target='_blank' style='color:#11a3de;'>"+params+"</a>";
 }
 
 function formatSubTime(params){
