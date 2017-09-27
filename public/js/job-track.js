@@ -49,6 +49,9 @@ $(function(){
                         }
                     })
                 }
+                // if(data[0].state == 'waitting'){   //queue   running    finished
+                	
+                // } 
             }
         }
     });
