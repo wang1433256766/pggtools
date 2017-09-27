@@ -76,12 +76,12 @@
                         <span class="title">已提交</span>
                     </li>
 
-                    <li data-step="2">
+                    <li data-step="2" class="active">
                         <span class="step">2</span>
                         <span class="title">进入队列</span>
                     </li>
 
-                    <li data-step="3">
+                    <li data-step="3" class="active">
                         <span class="step">3</span>
                         <span class="title">job分析</span>
                     </li>
