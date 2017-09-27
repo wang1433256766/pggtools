@@ -73,34 +73,34 @@
                 <ul class="steps" style="margin-left: 0">
                     <li data-step="1" class="active">
                         <span class="step">1</span>
-                        <span class="title">已提交</span>
+                        <span class="title">waitting</span>
                     </li>
 
-                    <li data-step="2" class="active">
+                    <li data-step="2">
                         <span class="step">2</span>
-                        <span class="title">进入队列</span>
+                        <span class="title">queue</span>
                     </li>
 
-                    <li data-step="3" class="active">
+                    <li data-step="3">
                         <span class="step">3</span>
-                        <span class="title">job分析</span>
+                        <span class="title">running</span>
                     </li>
 
                     <li data-step="4">
                         <span class="step">3a</span>
-                        <span class="title">job分析第一步</span>
+                        <span class="title">running-one</span>
                     </li>
                     <li data-step="5">
                         <span class="step">3b</span>
-                        <span class="title">job分析第二步</span>
+                        <span class="title">running-two</span>
                     </li>
                     <li data-step="6">
                         <span class="step">3c</span>
-                        <span class="title">job分析第三步</span>
+                        <span class="title">running-three</span>
                     </li>
                     <li data-step="7">
                         <span class="step">4</span>
-                        <span class="title">job运行结束</span>
+                        <span class="title">finished</span>
                     </li>
                 </ul>
             </div>

@@ -31,7 +31,7 @@ $(function(){
                 $('#jobnamemodel').text(data[0].name);
                 $('#jobpipelinemodel').text(data[0].pipeline);
                 $('#jobcommandmodel').text(data[0].command);
-                $('#jobstatusmodel').text(data[0].state);
+                //$('#jobstatusmodel').text(data[0].state);
                 $('#jobsubtimemodel').text(timestamp2date(data[0].submit_datetime));
                 $('#jobstatetimemodel').text(timestamp2date(data[0].state_datetime));
                 $("#fileModelTable").empty();
