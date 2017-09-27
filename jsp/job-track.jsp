@@ -85,7 +85,7 @@
                         <span class="step">3</span>
                         <span class="title">running</span>
                     </li>
-                    <!-- <li data-step="4">
+                    <li data-step="4">
                         <span class="step">3a</span>
                         <span class="title">running-one</span>
                     </li>
@@ -96,7 +96,7 @@
                     <li data-step="6">
                         <span class="step">3c</span>
                         <span class="title">running-three</span>
-                    </li> -->
+                    </li>
                     <li data-step="7">
                         <span class="step">4</span>
                         <span class="title">finished</span>
