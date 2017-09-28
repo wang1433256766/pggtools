@@ -14,6 +14,32 @@ $(function(){
             $ul.css('display','none');
             $ul.eq($t).css('display','block');
             //console.log($ul.eq($t).find('table')[0].id);
+            if($ul.eq($t).find('table')[0].id == 'nodes-table'){
+            	$.ajax({
+            		type: 'POST',
+            		url: '/getNode',
+            		dataType: 'json',
+            		data: {},
+            		success: function(res){
+            			if(res.status == 0 && res.content){
+            				var content = eval('('+res.content+')');
+            				if(content.length>0){
+            					var nodeHtml = "";
+            					$.each(content,function(i,v){
+            						//console.log(v);
+            						nodeHtml += '<tr>'+
+							                        '<td><input type="checkbox" class="checkbox_'+i+'"></td>'+
+							                        '<td>'+v.nodeName+'</td>'+
+							                        '<td>'+v.ip+'</td>'+
+							                        '<td>'+v.status+'</td>'+
+							                    '</tr>';
+            					})
+            					$("#nodeContent").append(nodeHtml);
+            				}
+            			}
+            		}
+            	})
+            }
             if($ul.eq($t).find('table')[0].id == 'job-grid-table'){
                 //jobManager
                 jQuery("#job-grid-table").jqGrid({

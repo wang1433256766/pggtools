@@ -26,6 +26,7 @@
             <li>JobManager</li>
             <li>FileManager</li>
             <li>NewsManager</li>
+            <li>NodesManager</li>
             <button class="btn btn-md btn-primary" id="sendSysEmail" title="发送系统监控邮件" style="float:right;margin-top:3px;">sendEmail</button>
         </ul>
         <div id="content">
@@ -44,6 +45,19 @@
             <ul>
                 <table id="news-grid-table"></table> 
                 <div id="news-grid-pager"></div>
+            </ul>
+            <ul>
+                <table id="nodes-table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" class="allcheck"></th>
+                            <th>nodeName</th>
+                            <th>ip</th>
+                            <th>status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="nodeContent"></tbody>
+                </table>
             </ul>
         </div>
         <br><br>
