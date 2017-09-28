@@ -60,6 +60,7 @@
                             <th class="label-default">size</th>
                             <th class="label-default">md5</th>
                             <th class="label-default">datetime</th>
+                            <th class="label-default">type</th>
                             <!-- <th class="label-default">status</th> -->
                         </tr>
                     </thead>
@@ -103,7 +104,6 @@
                     </li>
                 </ul>
             </div>
-            <div class="row"><h2>生成的脚本文件</h2></div>
         </div>
 
         <div class="footer">

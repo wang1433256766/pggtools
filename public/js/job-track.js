@@ -40,12 +40,16 @@ $(function(){
                 if(data[0].files && data[0].files.length>0){
                     $.each(data[0].files,function(i,v){
                         if(v!=null){
+                            var typeStr = "生成的文件";
+                            if(v.type==0){
+                                typeStr = "上传的文件";
+                            }
                             $("#fileModelTable").append("<tr>"+
                             	"<td>"+v.id+"</td>"+
                             	"<td><a target='_blank' href='/fileDownload?id="+v.id+"'>"+v.name+"</a></td>"+
                             	"<td>"+v.path+"</td><td>"+v.size+"</td>"+
                             	"<td>"+v.md5+"</td><td>"+v.datetime+"</td>"+
-                            	// "<td>"+v.status+"</td>"+
+                            	"<td>"+typeStr+"</td>"+
                             	"</tr>");
                         }
                     })
