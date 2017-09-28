@@ -48,6 +48,7 @@
             </ul>
             <ul>
                 <button class="btn btn-primary" id="addNode">添加</button>
+                <button class="btn btn-warning" id="updateNode">修改</button>
                 <button class="btn btn-danger" id="delNode">删除</button>
                 <table id="nodes-table" class="table table-bordered table-hover table-condensed">
                     <thead>
@@ -71,6 +72,35 @@
             <div id="cpuPie" style="width:33%;height:300px;float:left;"></div>
         </div> -->
         <div id="serverBar" style="width:100%;height:400px;"></div>
+    </div>
+
+    <!-- updateNodesModal -->
+    <div class="modal fade" id="updateNodesModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden>x</span>
+                    </button>
+                    <h4 class="modal-title">Nodes Update</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6"> 
+                            <label class="control-label">NodesStatus:</label>  
+                            <select id="nodesStatus" class="form-control">
+                                <option value="0">有效</option>
+                                <option value="1">无效</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"> 
+                    <button type="button" class="btn btn-primary" id="updateNotesBtn">Save</button> 
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- addNodesModal -->

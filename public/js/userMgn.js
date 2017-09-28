@@ -32,8 +32,8 @@ $(function(){
             	$("#addNotesBtn").click(function(){
             		var nodeName = $("#nodesName").val();
             		var ip = $("#nodesIP").val();
-            		if(!nodeName && !ip){
-            			alert("请填写节点名和ip"); return false;
+            		if(!nodeName || !ip){
+            			bootbox.alert("请填写节点名和ip"); return false;
             		}
             		$.ajax({
 	            		type: 'POST',
@@ -41,13 +41,41 @@ $(function(){
 	            		dataType: 'json',
 	            		data: {nodeName:nodeName,ip:ip,status:0},
 	            		success: function(res){
-	            			alert(res.msg);
+	            			bootbox.alert(res.msg);
 	            			if(res.status == 0){
 	            				$("#addNodesModal").modal('hide');
 	            				getNodes();
 	            			}
 	            		}
 	            	})
+            	})
+            	//修改节点状态
+            	$("#updateNode").click(function(){
+            		$("#updateNodesModal").modal('show');
+            	})
+            	$("#updateNotesBtn").click(function(){
+            		var nodeIds = "";
+            		var status = $("#nodesStatus").val();
+            		//获得选中的节点
+            		$.each($(".singlecheckbox"),function(i,v){
+            			if($(v).is(':checked')){
+            				nodeIds += v.id.substring(9) +',';
+            			}
+            		})
+            		nodeIds = nodeIds.substring(0,nodeIds.length-1);
+            		$.ajax({
+            			type: 'POST',
+            			url: '/updateNode',
+            			dataType: 'json',
+            			data: {nodeIds:nodeIds,status:status},
+            			success: function(res){
+            				bootbox.alert(res.msg);
+            				if(res.status == 0){
+            					$("#updateNodesModal").modal('hide');
+            					getNodes();
+            				}
+            			}
+            		})
             	})
             	//删除节点
             	$("#delNode").click(function(){
@@ -65,7 +93,7 @@ $(function(){
             			dataType: 'json',
             			data: {nodeIds:nodeIds},
             			success: function(res){
-            				alert(res.msg);
+            				bootbox.alert(res.msg);
             				if(res.status == 0){
             					getNodes();
             				}
