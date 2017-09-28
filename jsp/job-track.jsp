@@ -71,7 +71,7 @@
             <div class="row"><h2>Job State Tracking</h2></div>
             <div>
                 <ul class="steps" style="margin-left: 0">
-                    <li data-step="1" class="active">
+                    <li data-step="1">
                         <span class="step">1</span>
                         <span class="title">waitting</span>
                     </li>
