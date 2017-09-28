@@ -15,29 +15,62 @@ $(function(){
             $ul.eq($t).css('display','block');
             //console.log($ul.eq($t).find('table')[0].id);
             if($ul.eq($t).find('table')[0].id == 'nodes-table'){
-            	$.ajax({
-            		type: 'POST',
-            		url: '/getNode',
-            		dataType: 'json',
-            		data: {},
-            		success: function(res){
-            			if(res.status == 0 && res.content){
-            				var content = eval('('+res.content+')');
-            				if(content.length>0){
-            					var nodeHtml = "";
-            					$.each(content,function(i,v){
-            						//console.log(v);
-            						nodeHtml += '<tr>'+
-							                        '<td><input type="checkbox" class="checkbox_'+i+'"></td>'+
-							                        '<td>'+v.nodeName+'</td>'+
-							                        '<td>'+v.ip+'</td>'+
-							                        '<td>'+v.status+'</td>'+
-							                    '</tr>';
-            					})
-            					$("#nodeContent").append(nodeHtml);
+            	//获得所有节点
+            	getNodes();
+            	//全选
+            	$(".allcheck").change(function(){
+            		if($(".allcheck").is(':checked')){
+            			$(".singlecheckbox").prop('checked',true);
+            		}else{
+            			$(".singlecheckbox").prop('checked',false);
+            		}
+            	})
+            	//添加节点
+            	$("#addNode").click(function(){
+            		$("#addNodesModal").modal('show');
+            	})
+            	$("#addNotesBtn").click(function(){
+            		var nodeName = $("#nodesName").val();
+            		var ip = $("#nodesIP").val();
+            		if(!nodeName && !ip){
+            			alert("请填写节点名和ip"); return false;
+            		}
+            		$.ajax({
+	            		type: 'POST',
+	            		url: '/addNode',
+	            		dataType: 'json',
+	            		data: {nodeName:nodeName,ip:ip,status:0},
+	            		success: function(res){
+	            			alert(res.msg);
+	            			if(res.status == 0){
+	            				$("#addNodesModal").modal('hide');
+	            				getNodes();
+	            			}
+	            		}
+	            	})
+            	})
+            	//删除节点
+            	$("#delNode").click(function(){
+            		var nodeIds = "";
+            		//获得选中的节点
+            		$.each($(".singlecheckbox"),function(i,v){
+            			if($(v).is(':checked')){
+            				nodeIds += v.id.substring(9) +',';
+            			}
+            		})
+            		nodeIds = nodeIds.substring(0,nodeIds.length-1);
+            		$.ajax({
+            			type: 'POST',
+            			url: '/delNode',
+            			dataType: 'json',
+            			data: {nodeIds:nodeIds},
+            			success: function(res){
+            				alert(res.msg);
+            				if(res.status == 0){
+            					getNodes();
             				}
             			}
-            		}
+            		})
             	})
             }
             if($ul.eq($t).find('table')[0].id == 'job-grid-table'){
@@ -730,4 +763,36 @@ function delCommon(grid_table,url,status){
     } else {
         bootbox.alert("请选择要删除的行");
     }
+}
+//后去所有节点
+function getNodes(){
+	$.ajax({
+		type: 'POST',
+		url: '/getNode',
+		dataType: 'json',
+		data: {},
+		success: function(res){
+			if(res.status == 0 && res.content){
+				var content = eval('('+res.content+')');
+				if(content.length>0){
+					var nodeHtml = "";
+					$("#nodeContent").empty();
+					$.each(content,function(i,v){
+						//console.log(v);
+						var statusStr = "有效";
+						if(v.status == 1){
+							statusStr = "无效";
+						}
+						nodeHtml += '<tr>'+
+				                        '<td><input type="checkbox" id="checkbox_'+v.id+'" class="singlecheckbox"></td>'+
+				                        '<td>'+v.nodeName+'</td>'+
+				                        '<td>'+v.ip+'</td>'+
+				                        '<td>'+statusStr+'</td>'+
+				                    '</tr>';
+					})
+					$("#nodeContent").append(nodeHtml);
+				}
+			}
+		}
+	})
 }

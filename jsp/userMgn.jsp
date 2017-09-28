@@ -47,7 +47,9 @@
                 <div id="news-grid-pager"></div>
             </ul>
             <ul>
-                <table id="nodes-table">
+                <button class="btn btn-primary" id="addNode">添加</button>
+                <button class="btn btn-danger" id="delNode">删除</button>
+                <table id="nodes-table" class="table table-bordered table-hover table-condensed">
                     <thead>
                         <tr>
                             <th><input type="checkbox" class="allcheck"></th>
@@ -69,6 +71,38 @@
             <div id="cpuPie" style="width:33%;height:300px;float:left;"></div>
         </div> -->
         <div id="serverBar" style="width:100%;height:400px;"></div>
+    </div>
+
+    <!-- addNodesModal -->
+    <div class="modal fade" id="addNodesModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden>x</span>
+                    </button>
+                    <h4 class="modal-title">Nodes Add</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-9"> 
+                            <label class="control-label">NodesName:</label>  
+                            <input type="text" class="form-control" id="nodesName">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9"> 
+                            <label class="control-label">NodesIP:</label>  
+                            <input type="text" class="form-control" id="nodesIP">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"> 
+                    <button type="button" class="btn btn-primary" id="addNotesBtn">Save</button> 
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- addnewsmodal -->
