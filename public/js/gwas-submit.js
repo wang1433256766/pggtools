@@ -173,7 +173,7 @@ $(function(){
         $.ajax({
             async: true,
             type: 'POST',
-            url: '/addJob',
+            url: '/addJob2',
             xhrFields: {
                withCredentials: true
             },
