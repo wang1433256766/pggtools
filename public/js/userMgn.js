@@ -397,8 +397,96 @@ $(function(){
 
     //echarts 特效图
     var serverBarChart = echarts.init(document.getElementById('serverBar'));
-    $.get('/metrics').done(function (data) {
-        console.log(data);
+    var option = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        legend: {
+            data: []
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: [{
+            type: 'value'
+        }],
+        yAxis: [{
+            type: 'category',
+            data: []
+        }],
+        series: []
+    };
+    serverBarChart.setOption(option);
+
+    $.get('/metrics').done(function(data) {
+        if (data.status == 0) {
+            var metrics_data = eval('(' + data.content + ')');
+            //console.log(metrics_data);
+            var nodeName = []; //节点数组,代表x轴
+            var legend_data = ['mem_use', 'mem_free', 'disk_use', 'disk_free', 'cpu_use', 'cpu_free']; //legend数组
+            var series_data = [];
+            if (metrics_data && metrics_data.length > 0) {
+                for (var i = 0; i < metrics_data.length; i++) {
+                    nodeName.push(metrics_data[i].nodeName);
+                    series_data.push(metrics_data[i].mdetricList);
+                }
+            }
+
+            serverBarChart.setOption({
+                legend: {
+                    data: legend_data
+                },
+                yAxis: [{
+                    type: 'category',
+                    data: nodeName
+                }],
+                series: function() {
+                    var seriesArr = [];
+                    for (var k = 0; k < legend_data.length; k++) {
+                        var seriesObj = {};
+                        seriesObj.type = 'bar';
+                        seriesObj.name = legend_data[k];
+                        if (legend_data[k] == 'mem_use' || legend_data[k] == 'mem_free') {
+                            seriesObj.stack = 'mem';
+                        }
+                        if (legend_data[k] == 'disk_use' || legend_data[k] == 'disk_free') {
+                            seriesObj.stack = 'disk';
+                        }
+                        if (legend_data[k] == 'cpu_use' || legend_data[k] == 'cpu_free') {
+                            seriesObj.stack = 'cpu';
+                        }
+                        seriesObj.data = [];
+                        for (var j = 0; j < series_data.length; j++) {
+                            var data = {};
+                            $.each(series_data[j], function(i, v) {
+                                data[v.name] = v.val;
+                            })
+                            if (legend_data[k] == 'mem_use') {
+                                seriesObj.data.push((data.mem_total - data.mem_free) / data.mem_total);
+                            } else if (legend_data[k] == 'mem_free') {
+                                seriesObj.data.push(data.mem_free / data.mem_total);
+                            } else if (legend_data[k] == 'disk_use') {
+                                seriesObj.data.push((data.disk_total - data.disk_free) / data.disk_total);
+                            } else if (legend_data[k] == 'disk_free') {
+                                seriesObj.data.push(data.disk_free / data.disk_total);
+                            } else if (legend_data[k] == 'cpu_use') {
+                                seriesObj.data.push(data.cpu_system / 100);
+                            } else {
+                                seriesObj.data.push((100 - data.cpu_system) / 100);
+                            }
+                        }
+                        seriesArr.push(seriesObj);
+                    }
+                    return seriesArr;
+                }()
+            });
+        }
     })
     // var memPieChart = echarts.init(document.getElementById('memPie'));
     // var diskPieChart = echarts.init(document.getElementById('diskPie'));
