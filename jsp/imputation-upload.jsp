@@ -62,9 +62,10 @@
             <table id="grid-table"></table>
             <div id="grid-pager"></div>
         </div>
-        <div class="footer">
+        <!-- <div class="footer">
             CAS-MAP Partner Institute for Computational Blology [PICB]. Copyright &copy; 2015-2017
-        </div>
+        </div> -->
+        <jsp:include  page="footer.jsp"/>
 
         <!--å¼¹çª-->
         <div id="popup">

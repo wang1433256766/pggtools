@@ -154,9 +154,10 @@
             <!-- </form> -->
         </div>
 
-        <div class="footer">
+        <!-- <div class="footer">
             CAS-MAP Partner Institute for Computational Blology [PICB]. Copyright &copy; 2015-2017
-        </div>
+        </div> -->
+        <jsp:include  page="footer.jsp"/>
 
         <!-- modal -->
         <div class="modal fade bs-example-modal-lg" id="fileModal" tabindex="-1" role="dialog" aria-labelledby="fileModalLabel">  

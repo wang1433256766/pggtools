@@ -55,9 +55,10 @@
         <br>-->
 
     <div id="mainEcharts" class="wrap" style="background:#eeeeee;"></div>
-    <div class="footer">
+    <!-- <div class="footer">
         CAS-MAP Partner Institute for Computational Blology [PICB]. Copyright &copy; 2015-2017
-    </div>
+    </div> -->
+    <jsp:include  page="footer.jsp"/>
 </body>
 <script src="../public/js/jquery.min.js"></script>
 <script src="../public/js/echarts.min.js"></script>

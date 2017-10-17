@@ -61,9 +61,10 @@
             </div> -->
         </div>
 
-        <div class="footer">
+        <!-- <div class="footer">
             CAS-MAP Partner Institute for Computational Blology [PICB]. Copyright &copy; 2015-2017
-        </div>
+        </div> -->
+        <jsp:include  page="footer.jsp"/>
 
         <!-- addmodal -->
         <div class="modal fade bs-example-modal-lg" id="addJobModal" tabindex="-1" role="dialog" aria-labelledby="addJobModalLabel">

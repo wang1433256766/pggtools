@@ -180,9 +180,11 @@
             
         </div>
 
-        <div class="footer">
+        <jsp:include  page="footer.jsp"/>
+
+        <!-- <div class="footer">
             CAS-MAP Partner Institute for Computational Blology [PICB]. Copyright &copy; 2015-2017
-        </div>
+        </div> -->
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="../public/js/jquery.min.js"></script>
         <script src="../public/js/bootstrap.min.js"></script>
