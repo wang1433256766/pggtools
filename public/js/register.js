@@ -170,7 +170,7 @@ $(function(){
 					// 	window.location.href="./pggtool.html";
 					// }else{
 						bootbox.alert(data.msg);
-						window.location.href="./login.html"
+						window.location.href="./login"
 					//}
 				}else{
 					bootbox.alert(data.msg);
