@@ -27,8 +27,20 @@ var uploader = WebUploader.create({
     chunkRetry: 3, //某个分片由于网络问题，可以自动重传3次
     threads: 5, //允许同时最大上传进程数
     fileSizeLimit: 10 * 1024 * 1024 * 1024, //验证文件总大小是否超出限制, 超出则不允许加入队列 （10个G）
-    fileSingleSizeLimit: 10 * 1024 * 1024 * 1024 //验证单个文件大小是否超出限制, 超出则不允许加入队列 （10个G）
+    fileSingleSizeLimit: 10 * 1024 * 1024 * 1024, //验证单个文件大小是否超出限制, 超出则不允许加入队列 （10个G）
+    accept: {
+        title: 'gwasLimitFile',
+        extensions: urlPath.indexOf('gwas')>0?'ped,map,covariates':'*',
+        mimeTypes: '*'
+    }
 });
+
+uploader.on('error', function(type){
+    if (type=="Q_TYPE_DENIED"){
+        alert("Please upload .ped or .map or .covariates file");
+        return false;
+    }
+})
 
 // 当有文件被添加进队列的时候
 uploader.on('fileQueued', function (file) {
@@ -172,17 +184,31 @@ $("#UploadBtn").click(function () {
 
     //睡一秒再进行下一次循环
     for(i=0;i<temp.length;i++){
-        var fileobj = temp[i]; 
-        (function(fileobj) {
-            setTimeout(function() {
-        　　　　 if(md5QueProgress[fileobj.id].progress.toString()=='1'){
-                    $('#' + fileobj.id).find('p.state').text('entered download queue');
-                    uploader.options.formData.guid = fileobj.guid;
-                    uploader.options.formData.md5value = fileobj.wholeMd5;
-                    uploader.upload(fileobj.id);
+        var fileobj = temp[i];
+        $.ajax({
+            async: false,
+            type: 'POST',
+            url: '/isFileNameExist',
+            dataType: 'json',
+            data: {fileName:fileobj.name},
+            success: function(res){
+                if(res.status == 0){
+                    (function(fileobj) {
+                        setTimeout(function() {
+                    　　　　 if(md5QueProgress[fileobj.id].progress.toString()=='1'){
+                                $('#' + fileobj.id).find('p.state').text('entered download queue');
+                                uploader.options.formData.guid = fileobj.guid;
+                                uploader.options.formData.md5value = fileobj.wholeMd5;
+                                uploader.upload(fileobj.id);
+                            }
+                        }, i * 500);
+                    })(fileobj);
+                }else{
+                    alert("The file of the same name has been automatically filtered");
                 }
-            }, i * 1000);
-        })(fileobj);
+            }
+        })
+        
     }
 });
 

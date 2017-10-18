@@ -666,7 +666,7 @@ function delJobModal(){
 }
 //删除file
 function delFileModal(){
-    delCommon("#files-grid-table",'/deleteFile',1);
+    delCommon("#files-grid-table",'/deleteFileAdmin',1);
 }
 //删除新闻
 function delNewsModal(){

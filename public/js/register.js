@@ -165,13 +165,13 @@ $(function(){
 			data: {email:email,firstName:first_name,lastName:last_name,uname:username,group:institution,location:address,password:pwd},
 			success: function(data){
 				if(data.status == 0){
-					if(confirm(data.msg+',Whether to log in directly?')){
-						setCookie("email",email); 
-						window.location.href="./pggtool.html";
-					}else{
+					// if(confirm(data.msg+',Whether to login directly?')){
+					// 	setCookie("email",email); 
+					// 	window.location.href="./pggtool.html";
+					// }else{
 						bootbox.alert(data.msg);
 						window.location.href="./login.html"
-					}
+					//}
 				}else{
 					bootbox.alert(data.msg);
 				}

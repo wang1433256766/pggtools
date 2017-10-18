@@ -166,7 +166,13 @@ $(function(){
         var qcImiss = $("#imiss").val();
         var qcSmiss = $("#smiss").val();
         var qcHwe = $("#hwe").val();
-        var jobname = $("#jobname").val();    
+        var jobname = $("#jobname").val();  
+
+        
+        if(!$("#ped-file").val() || !$("#map-file").val()){
+        	alert(".ped and .map file is must");
+        	return false;
+        }  
             
         //console.log(testType+'--'+chooseModel+'--'+files+'--'+qcMaf+'--'+qcImiss+'--'+qcSmiss+'--'+qcHwe+'--'+jobname);return false;
         
