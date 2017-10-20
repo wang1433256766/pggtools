@@ -1,11 +1,14 @@
 $(function(){
     var rightContent = '<a href="/login">login</a> | <a href="/register">register</a>';
+    var rightContent1 = '<li><a href="/login">login</a></li><li><a href="/register">register</a></li>';
+                
     //var username = getCookie("email");
     $.get('/isLogin',function(res){
         //console.log(res);
         if(res.status == 0){
             var data = eval('(' + res.content + ')');
             $("#email").html(data.username);
+            $("#email1").html(data.username);
             if(data.role==2){
                 $("#userManager").removeClass('hide');
             }else{
@@ -14,17 +17,26 @@ $(function(){
         }else{
             $(".login").html('');
             $(".login").html(rightContent);
+            $(".sed-nav ul").html('');
+            $(".sed-nav ul").html(rightContent1);
         }
     })
 
+    $("#navuserinfo").hover(function(){
+        $(".sed-nav").css('display','block');
+    })
+    $("#navuserinfo").mouseleave(function(){
+        $(".sed-nav").css('display','none');
+    })
+
     //个人中心
-    $("#email").click(function(event) {
+    $("#email,#email1").click(function(event) {
     	/* Act on the event */
     	window.location.href = './myAccount';
     });
 
     //登出
-    $("#logout").click(function(){
+    $("#logout,#logout1").click(function(){
          $.get('/logout',function (data) {
             //delCookie("email");
             window.location.href = './login';

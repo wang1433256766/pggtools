@@ -57,3 +57,34 @@ body>.nav .active a:hover{
     padding-top:10px;
 	color: #ffffff;
 }
+.sed-nav{
+    display: none;
+    position: absolute;
+    right: 20px;
+    background-color: #1a649e;
+    z-index: 999;
+}
+.sed-nav>ul{
+    list-style-type: none;
+    text-align: right;
+    padding: 10px;
+}
+.sed-nav>ul a{
+    padding:5px;
+}
+@media screen and (max-width: 1400px) {
+    #navuserinfo{
+        display:block;
+    }
+    .login{
+        display:none;
+    }
+}
+@media screen and (min-width: 1400px) {
+    #navuserinfo{
+        display:none;
+    }
+    .login{
+        display:block;
+    }
+}

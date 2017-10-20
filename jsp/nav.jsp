@@ -9,6 +9,14 @@
     <li role="presentation" id="illustration"><a href="/illustration">Figure Illustration</a></li>
     <li role="presentation" id="aggregation"><a href="#">Tool Aggregation</a></li>
     <li role="presentation" id="userManager" class="hide"><a href="/userMgn">UserManager</a></li>
+    <li style="float:right;" id="navuserinfo"><a><span class="glyphicon glyphicon-user" style="color:#ffffff;">&nbsp;</span></a>
+        <div class="sed-nav">
+            <ul>
+                <li><a id="email1"></a></li>
+                <li><a id="logout1">logout</a></li>
+            </ul>
+        </div>
+    </li>
     <div class="login text-right">
         <span class="glyphicon glyphicon-user" style="color:#ffffff;">&nbsp;</span><a id="email"></a> | <a id="logout">logout</a>
     </div> 
