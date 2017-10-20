@@ -27,8 +27,8 @@ h1,h2,h3,h4,h5,h6{
 	margin-top:42px;
     margin-left:0px;
     margin-right:0px;
-    padding-left:30px;
-    padding-right:20px;
+    /*padding-left:30px;
+    padding-right:20px;*/
     /*border-radius: 10px;*/
     background-image: url('../images/1-HOME1_02.png');
     min-width: 1100px;

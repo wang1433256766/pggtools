@@ -397,10 +397,11 @@ $(function(){
 
     //echarts 特效图
     var sourceVal = $("#sourceId option:selected").val();
+    var xname = $("#sourceId option:selected").text();
     var legendData = sourceVal.split(',');
     var serverBarChart = echarts.init(document.getElementById('serverBar'));
 
-    $.get('./public/js/resourse.json').done(function(data) {
+    $.get('/metrics').done(function(data) {
         if (data.status == 0) {
             var metrics_data = eval('(' + data.content + ')');
             console.log(metrics_data);
@@ -413,12 +414,13 @@ $(function(){
                 }
             }
 
-            loadEchartsImg(serverBarChart,legendData,nodeName,series_data);
+            loadEchartsImg(serverBarChart,legendData,nodeName,series_data,xname);
 
             $("#sourceId").change(function(){
                 sourceVal = $("#sourceId option:selected").val();
+                xname = $("#sourceId option:selected").text();
                 legendData = sourceVal.split(',');
-                loadEchartsImg(serverBarChart,legendData,nodeName,series_data);
+                loadEchartsImg(serverBarChart,legendData,nodeName,series_data,xname);
 
             })
         }
@@ -437,12 +439,13 @@ $(function(){
                     }
                 }
 
-                loadEchartsImg(serverBarChart,legendData,nodeName,series_data);
+                loadEchartsImg(serverBarChart,legendData,nodeName,series_data,xname);
 
                 $("#sourceId").change(function(){
                     sourceVal = $("#sourceId option:selected").val();
+                    xname = $("#sourceId option:selected").text();
                     legendData = sourceVal.split(',');
-                    loadEchartsImg(serverBarChart,legendData,nodeName,series_data);
+                    loadEchartsImg(serverBarChart,legendData,nodeName,series_data,xname);
 
                 })
             }
@@ -676,10 +679,11 @@ $(function(){
     // },60000);
 })
 
-function loadEchartsImg(serverBarChart,legendData,nodeName,series_data){
+function loadEchartsImg(serverBarChart,legendData,nodeName,series_data,xname){
     serverBarChart.setOption({
         title: {
-            text: 'Source View'
+            text: 'Source View',
+            left: 'center'
         },
         tooltip: {
             trigger: 'axis',
@@ -688,6 +692,7 @@ function loadEchartsImg(serverBarChart,legendData,nodeName,series_data){
             }
         },
         legend: {
+            left: 'right',
             data: legendData
         },
         grid: {
@@ -698,10 +703,12 @@ function loadEchartsImg(serverBarChart,legendData,nodeName,series_data){
         },
         xAxis: {
             type: 'value',
+            name: xname,
             boundaryGap: [0, 0.01]
         },
         yAxis: {
             type: 'category',
+            name: 'Server node',
             data: nodeName
         },
         series: function(){

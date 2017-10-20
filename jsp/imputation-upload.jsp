@@ -29,7 +29,7 @@
                 <li role="presentation" ><a href="/imputation-status">Status</a></li>
                 <li role="presentation" class="active"><a href="/imputation-upload">Upload</a></li>
                 <div class="imputation-server text-right">
-                    <p>PICB Imputation Server &nbsp;&nbsp;&nbsp; <span class="label label-warning label-color">Beta</span></p>
+                    <p>PGG Imputation Server &nbsp;&nbsp;&nbsp; <span class="label label-warning label-color">Beta</span></p>
                 </div>
             </ul>
         </div>       

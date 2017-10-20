@@ -20,7 +20,7 @@
                 <li role="presentation" ><a href="/gwas-status">Status</a></li>
                 <li role="presentation"><a href="/gwas-upload">Upload</a></li>
                 <div class="imputation-server text-right">
-                    <p>PICB Imputation Server &nbsp;&nbsp;&nbsp;<span class="label label-info label-color">Beta</span></p>
+                    <p>PGG Imputation Server &nbsp;&nbsp;&nbsp;<span class="label label-info label-color">Beta</span></p>
                 </div>
             </ul>
         </div>
@@ -32,7 +32,7 @@
             <section id="about" style="padding-top:102px;margin-top:-102px;">
                 <div class="jumbotron-part">
                     <div class="jumbotron-describtion">
-                        <h3 style="font-size:32px;color: #025394;">PICB Imputation Server</h3>
+                        <h3 style="font-size:32px;color: #025394;">PGG Imputation Server</h3>
                         <p style="font-size:18px;line-height:32px;">This server provides a free genotype imputation service. You can upload GWAS genotypes (VCF or 23andMe format) and receive phased and imputed genomes in return. Our server offers imputation from HapMap, 1000 Genomes (Phase 1 and 3), CAAPA and the updated Haplotype Reference Consortium (HRC version r1.1) panel. Learn more or follow us on Twitter.</p>
                     </div>
                     <div class="jumbotron-image">
@@ -62,7 +62,7 @@
                 <!--format section-->
                 <section id="format" class="section" style="padding-top:92px;margin-top:-92px;">
                     <h3>Prepare your format</h3>
-                    <p class="fontStyle">PICB Imputation Server requires input data to be in PLINK ped or VCF format. If you have data with other format, please check Format Conversion to see whether there is a tool or script to convert your data to required format. The server support genotype calls from sequence data, but the imputation error is expected to be high due to the density and high level of missingness for full sequence data.</p>  
+                    <p class="fontStyle">PGG Imputation Server requires input data to be in PLINK ped or VCF format. If you have data with other format, please check Format Conversion to see whether there is a tool or script to convert your data to required format. The server support genotype calls from sequence data, but the imputation error is expected to be high due to the density and high level of missingness for full sequence data.</p>  
                     <h5>For PLINK ped format, we require:</h5>
                     <div class="">
                         <ul>
