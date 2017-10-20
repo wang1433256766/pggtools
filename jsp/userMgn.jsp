@@ -71,6 +71,7 @@
             <div id="diskPie" style="width:33%;height:300px;float:left;"></div> 
             <div id="cpuPie" style="width:33%;height:300px;float:left;"></div>
         </div> -->
+        <!-- 资源监控部分 -->
         <div id="serverBar" style="width:100%;height:400px;"></div>
     </div>
 
