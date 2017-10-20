@@ -717,11 +717,11 @@ function loadEchartsImg(serverBarChart,legendData,nodeName,series_data){
                         data[v.name] = v.val;
                     })
                     if (legendData[k] == 'mem_use') {
-                        seriesObj.data.push(data.mem_total - data.mem_free);
+                        seriesObj.data.push((data.mem_total*1000 - data.mem_free*1000)/1000);
                     } else if (legendData[k] == 'mem_free') {
                         seriesObj.data.push(data.mem_free);
                     } else if (legendData[k] == 'disk_use') {
-                        seriesObj.data.push(data.disk_total - data.disk_free);
+                        seriesObj.data.push((data.disk_total*1000 - data.disk_free*1000)/1000);
                     } else if (legendData[k] == 'disk_free') {
                         seriesObj.data.push(data.disk_free);
                     } else if (legendData[k] == 'cpu_use') {
