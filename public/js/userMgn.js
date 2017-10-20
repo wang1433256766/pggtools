@@ -396,59 +396,58 @@ $(function(){
     $("#cu-birthday").datepicker( "option", "dateFormat", "yy-mm-dd");
 
     //echarts 特效图
-    var legendDate = $("#sourceId option:selected").val();
+    var sourceVal = $("#sourceId option:selected").val();
+    var legendData = sourceVal.split(',');
     var serverBarChart = echarts.init(document.getElementById('serverBar'));
 
-    $.get('/metrics').done(function(data) {
+    $.get('./public/js/resourse.json').done(function(data) {
         if (data.status == 0) {
             var metrics_data = eval('(' + data.content + ')');
+            console.log(metrics_data);
             var nodeName = []; //节点数组,代表y轴
+            var series_data = [];
             if (metrics_data && metrics_data.length > 0) {
                 for (var i = 0; i < metrics_data.length; i++) {
                     nodeName.push(metrics_data[i].nodeName);
+                    series_data.push(metrics_data[i].mdetricList);
                 }
             }
 
-            serverBarChart.setOption({
-                title: {
-                    text: 'Source View'
-                },
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'shadow'
+            loadEchartsImg(serverBarChart,legendData,nodeName,series_data);
+
+            $("#sourceId").change(function(){
+                sourceVal = $("#sourceId option:selected").val();
+                legendData = sourceVal.split(',');
+                loadEchartsImg(serverBarChart,legendData,nodeName,series_data);
+
+            })
+        }
+    })
+
+    setInterval(function () {
+        $.get('/metrics').done(function(data) {
+            if (data.status == 0) {
+                var metrics_data = eval('(' + data.content + ')');
+                var nodeName = []; //节点数组,代表y轴
+                var series_data = [];
+                if (metrics_data && metrics_data.length > 0) {
+                    for (var i = 0; i < metrics_data.length; i++) {
+                        nodeName.push(metrics_data[i].nodeName);
+                        series_data.push(metrics_data[i].mdetricList);
                     }
-                },
-                legend: {
-                    data: ['mem_use', 'mem_free']
-                },
-                grid: {
-                    left: '3%',
-                    right: '4%',
-                    bottom: '3%',
-                    containLabel: true
-                },
-                xAxis: {
-                    type: 'value',
-                    boundaryGap: [0, 0.01]
-                },
-                yAxis: {
-                    type: 'category',
-                    data: {}
-                },
-                series: [
-                    {
-                        name: 'mem_use',
-                        type: 'bar',
-                        data: {}
-                    },
-                    {
-                        name: 'mem_free',
-                        type: 'bar',
-                        data: {}
-                    }
-                ]
-            });
+                }
+
+                loadEchartsImg(serverBarChart,legendData,nodeName,series_data);
+
+                $("#sourceId").change(function(){
+                    sourceVal = $("#sourceId option:selected").val();
+                    legendData = sourceVal.split(',');
+                    loadEchartsImg(serverBarChart,legendData,nodeName,series_data);
+
+                })
+            }
+        })
+    },60000);
 
     //echarts 特效图
     // var serverBarChart = echarts.init(document.getElementById('serverBar'));
@@ -676,6 +675,67 @@ $(function(){
     //     })
     // },60000);
 })
+
+function loadEchartsImg(serverBarChart,legendData,nodeName,series_data){
+    serverBarChart.setOption({
+        title: {
+            text: 'Source View'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: legendData
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+        },
+        yAxis: {
+            type: 'category',
+            data: nodeName
+        },
+        series: function(){
+            var seriesArr = [];
+            for(var k=0; k<legendData.length; k++){
+                var seriesObj = {};
+                seriesObj.name = legendData[k];
+                seriesObj.type = 'bar';
+                seriesObj.data = [];
+                for (var j = 0; j < series_data.length; j++) {
+                    var data = {};
+                    $.each(series_data[j], function(i, v) {
+                        data[v.name] = v.val;
+                    })
+                    if (legendData[k] == 'mem_use') {
+                        seriesObj.data.push(data.mem_total - data.mem_free);
+                    } else if (legendData[k] == 'mem_free') {
+                        seriesObj.data.push(data.mem_free);
+                    } else if (legendData[k] == 'disk_use') {
+                        seriesObj.data.push(data.disk_total - data.disk_free);
+                    } else if (legendData[k] == 'disk_free') {
+                        seriesObj.data.push(data.disk_free);
+                    } else if (legendData[k] == 'cpu_use') {
+                        seriesObj.data.push(data.cpu_system / 100);
+                    } else {
+                        seriesObj.data.push((100 - data.cpu_system) / 100);
+                    }
+                }
+                seriesArr.push(seriesObj);
+            }
+            return seriesArr;
+        }()
+    });
+}
 //时间戳转日期格式
 function timestamp2date(timestamp) {
     var newDate = new Date();

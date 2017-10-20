@@ -73,9 +73,9 @@
         </div> -->
         <!-- 资源监控部分 -->
         <select id="sourceId">
-            <option value="['mem_use','mem_free']">mem</option>
-            <option value="['disk_use','disk_free']">disk</option>
-            <option value="['cpu_use','cpu_free']">cpu</option>
+            <option value="mem_use,mem_free">mem</option>
+            <option value="disk_use,disk_free">disk</option>
+            <option value="cpu_use,cpu_free">cpu</option>
         </select>
         <div id="serverBar" style="width:100%;height:400px;"></div>
     </div>
