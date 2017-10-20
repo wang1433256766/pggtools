@@ -5,7 +5,7 @@
     height: 42px;
 	position:fixed;
 	top:0px;
-	z-index:5;
+	z-index:9;
 	background-image:url('../images/1-HOME_05.png');
 }
 
