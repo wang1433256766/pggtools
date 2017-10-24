@@ -125,7 +125,7 @@
                         <!-- <p> <img src="../public/image/pop.proxy.png" height=100px width=120px /> -->
 
 
-                        <div class="curcle curcle-2"><img src="../public/images/https___www.pggtools.org_pggtools_06.png" alt="photo"><div class="curcle-text" style="margin-left:-25px;"><i>PGG</i>.Expression</div></div>
+                        <div class="curcle curcle-2"><img src="../public/images/https___www.pggtools.org_pggtools_06.png" alt="photo"><div class="curcle-text" style="margin-left:-18px;"><i>PGG</i>.Expression</div></div>
                         <!-- <p> <img src="../public/image/exp.proxy.png" height=100px width=120px /> -->
 
 
