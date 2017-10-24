@@ -25,17 +25,21 @@ html,body{
 }
 .left-logo .logo{
     margin: 20px auto;
-    width: 120px;
+    /*width: 120px;
     height: 60px;
     border-radius: 5px;
-    background-color: #999999;
+    background-color: #999999;*/
     line-height: 60px;
     margin-left: 10px;
 }
 .logo p{
-    margin-left: 140px;
+    margin-left: 46px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
+}
+.logo p img{
+    vertical-align: middle;
+    margin-right: 15px;
 }
 .left-logo .logo:first-child{
     margin-top: 40px;

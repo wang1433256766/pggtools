@@ -12,10 +12,10 @@
 	<div class="wrap">
 		<div class="title">PGG</div>
 		<div class="left-logo">
-			<div class="logo"><p>NAME</p></div>
-			<div class="logo"><p>NAME</p></div>
-			<div class="logo"><p>NAME</p></div>
-			<div class="logo"><p>NAME</p></div>
+			<div class="logo" style="color:#4b2c34;"><p><img src="../public/images/Login_03.png" alt="photo">PGG.SV</p></div>
+			<div class="logo" style="color:#649dad;"><p><img src="../public/images/Login_06.png" alt="photo">PGG.Express</p></div>
+			<div class="logo" style="color:#4e4e6a;"><p><img src="../public/images/Login_08.png" alt="photo">PGG.SNV</p></div>
+			<div class="logo" style="color:#466551;"><p><img src="../public/images/Login_10.png" alt="photo">PGG.Tools</p></div>
 		</div>
 		<div class="right-opt">
 			<div class="row">

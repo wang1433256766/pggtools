@@ -121,18 +121,18 @@
 
                     <!--h4> PGGSuite: The affiliated Databases</h4-->
 
-                        <div class="curcle curcle-1"><div class="curcle-text"><i>PGG</i>.SV</div></div>
+                        <div class="curcle curcle-1"><img src="../public/images/https___www.pggtools.org_pggtools_08.png" alt="photo"><div class="curcle-text"><i>PGG</i>.SV</div></div>
                         <!-- <p> <img src="../public/image/pop.proxy.png" height=100px width=120px /> -->
 
 
-                        <div class="curcle curcle-2"><div class="curcle-text" style="margin-left:-25px;"><i>PGG</i>.Expression</div></div>
+                        <div class="curcle curcle-2"><img src="../public/images/https___www.pggtools.org_pggtools_06.png" alt="photo"><div class="curcle-text" style="margin-left:-25px;"><i>PGG</i>.Expression</div></div>
                         <!-- <p> <img src="../public/image/exp.proxy.png" height=100px width=120px /> -->
 
 
-                        <div class="curcle curcle-3"><div class="curcle-text"><i>PGG</i>.SNV</div></div>
+                        <div class="curcle curcle-3"><img src="../public/images/https___www.pggtools.org_pggtools_10.png" alt="photo"><div class="curcle-text"><i>PGG</i>.SNV</div></div>
                         <!-- <p> <img src="../public/image/cnv.proxy.png" height=100px width=120px /> -->
 
-                        <div class="curcle curcle-4"><div class="curcle-text"><i>PGG</i>.Tools</div></div>
+                        <div class="curcle curcle-4"><img src="../public/images/https___www.pggtools.org_pggtools_12.png" alt="photo"><div class="curcle-text"><i>PGG</i>.Tools</div></div>
                         <!-- <p> <img src="../public/image/pop.proxy.png" height=100px width=120px /> -->
 
                 

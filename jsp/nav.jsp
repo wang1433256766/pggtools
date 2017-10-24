@@ -1,6 +1,6 @@
 <ul class="nav nav-pills" id="navName">
     <div class="navbar-brand text-left">
-        <a href="./pggtools"><img alt="home" src="../public/images/pgg-logo.png"></a>
+        <a href="./pggtools"><img alt="home" src="../public/images/https___www.pggtools.org_pggtools_02.png"></a>
     </div>
     <li role="presentation" id="pggtool"><a href="/pggtools">Home</a></li>
     <li role="presentation" id="imputation"><a href="/imputation">Imputation</a></li>
